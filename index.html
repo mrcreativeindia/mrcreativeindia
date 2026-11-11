@@ -56,12 +56,31 @@ footer{padding:28px 0;color:#aaa;font-size:12px}.footer-inner{display:flex;justi
 .floating-contact .wa-icon{font-size:19px;line-height:1}
 @media(max-width:760px){.floating-contact{right:14px;bottom:14px;padding:12px 15px;font-size:11px}}
 
+
+.portfolio-section{background:linear-gradient(180deg,#0b0b0b,#111 55%,#0b0b0b)}
+.portfolio-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.portfolio-tile{min-height:230px;position:relative;isolation:isolate;overflow:hidden;padding:24px;border:1px solid rgba(214,173,85,.42);border-radius:8px;background:radial-gradient(circle at 80% 10%,rgba(214,173,85,.23),transparent 38%),linear-gradient(145deg,#292012,#121212 65%);display:flex;flex-direction:column;justify-content:flex-end;transition:transform .25s,border-color .25s}
+.portfolio-tile:before{content:"";position:absolute;inset:12px;border:1px solid rgba(214,173,85,.14);border-radius:4px;z-index:-1}
+.portfolio-tile:hover{transform:translateY(-5px);border-color:var(--gold2)}
+.portfolio-icon{font-size:38px;color:var(--gold2);margin-bottom:auto;text-shadow:0 4px 20px rgba(214,173,85,.22)}
+.portfolio-tile h3{color:var(--gold2);font-size:18px;margin:20px 0 6px}
+.portfolio-tile p{font-size:13px;color:#c9c1b3;margin:0;line-height:1.65}
+.journey-section{background:#101010;border-top:1px solid #292216;border-bottom:1px solid #292216}
+.journey-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;counter-reset:journey}
+.journey-step{position:relative;padding:26px 22px;border:1px solid var(--line);border-radius:7px;background:linear-gradient(145deg,#191919,#101010);counter-increment:journey}
+.journey-step:before{content:"0" counter(journey);display:block;color:var(--gold);font-size:12px;letter-spacing:3px;margin-bottom:22px}
+.journey-step h3{color:var(--gold2);font-size:18px;margin:0 0 9px}
+.journey-step p{color:#c7c0b4;font-size:13px;margin:0}
+.journey-note{max-width:780px;text-align:center;color:#bdb6a8;font-size:13px;margin:28px auto 0}
+@media(max-width:900px){.portfolio-grid,.journey-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.portfolio-grid,.journey-grid{grid-template-columns:1fr}.portfolio-tile{min-height:190px}}
+
 </style>
 </head>
 <body>
 <header class="site-header"><div class="wrap nav">
 <a class="brand" href="#home">MR CREATIVE INDIA<small>MUSIC • MEDIA • EVENTS</small></a>
-<nav class="nav-links" aria-label="Main navigation"><a href="#about">About</a><a href="#divisions">Our Work</a><a href="#academy">JMA</a><a href="#events">Events</a><a href="#founder">Founder</a><a href="#contact">Contact</a></nav>
+<nav class="nav-links" aria-label="Main navigation"><a href="#about">About</a><a href="#divisions">Our Work</a><a href="#portfolio">Portfolio</a><a href="#journey">Journey</a><a href="#academy">JMA</a><a href="#events">Events</a><a href="#founder">Founder</a><a href="#contact">Contact</a></nav>
 </div></header>
 <main>
 <section class="hero" id="home"><div class="wrap hero-content">
@@ -87,6 +106,16 @@ footer{padding:28px 0;color:#aaa;font-size:12px}.footer-inner{display:flex;justi
 <article class="card"><div class="symbol">◈</div><h3>Media & Productions</h3><p>Creative content, music-related media projects and production initiatives.</p><span class="tag">IDEAS INTO EXPERIENCES</span></article>
 <article class="card"><div class="symbol">◎</div><h3>Creative Collaborations</h3><p>Connecting artists, learners and creators for meaningful creative projects and experiences.</p><span class="tag">COLLABORATE • CREATE</span></article>
 </div></div></section>
+
+<section class="portfolio-section" id="portfolio"><div class="wrap">
+<div class="section-heading"><div class="eyebrow">Selected Creative Areas</div><h2>Our <span class="gold">Portfolio</span></h2><p>A look at the creative spaces and experiences being developed under the MR CREATIVE INDIA vision.</p></div>
+<div class="portfolio-grid">
+<article class="portfolio-tile"><div class="portfolio-icon">♫</div><h3>Music Education</h3><p>JMA learning pathways across Vocal, Guitar, Keyboard / Piano and Tabla.</p></article>
+<article class="portfolio-tile"><div class="portfolio-icon">◈</div><h3>Music & Media</h3><p>JMC creative projects, music content and artist collaborations.</p></article>
+<article class="portfolio-tile"><div class="portfolio-icon">✦</div><h3>Live Experiences</h3><p>Open stage concepts, performances and community-led events.</p></article>
+<article class="portfolio-tile"><div class="portfolio-icon">🏆</div><h3>Talent Recognition</h3><p>Creator and talent initiatives that celebrate creativity and dedication.</p></article>
+</div></div></section>
+
 <section class="academy-section" id="academy"><div class="wrap"><div class="section-heading"><div class="eyebrow">Learn Music with JMA</div><h2>Find Your Musical Voice</h2><p><strong class="gold">Jaunpur Music Academy</strong> — Learn | Practice | Perform. Start your musical journey with guided learning.</p></div>
 <div class="cards">
 <article class="card"><div class="symbol">🎤</div><h3>Vocal</h3><p>Build musical foundations, voice culture and singing skills.</p></article>
@@ -103,6 +132,18 @@ footer{padding:28px 0;color:#aaa;font-size:12px}.footer-inner{display:flex;justi
 <article class="card"><div class="symbol">✧</div><h3>Creative Events</h3><p>Music-led gatherings, collaborations and community experiences.</p></article>
 <article class="card"><div class="symbol">🏆</div><h3>Creator & Talent Awards</h3><p>Celebrating creativity, effort and emerging talent.</p></article>
 </div></div></section>
+
+<section class="journey-section" id="journey"><div class="wrap">
+<div class="section-heading"><div class="eyebrow">The Story & The Vision</div><h2>Our <span class="gold">Journey</span></h2><p>One vision bringing music, learning, media and live experiences together.</p></div>
+<div class="journey-grid">
+<article class="journey-step"><h3>The Vision</h3><p>A creative platform shaped around music, expression and meaningful opportunities.</p></article>
+<article class="journey-step"><h3>Learning Through Music</h3><p>Building JMA as a place to learn, practice and develop musical skills.</p></article>
+<article class="journey-step"><h3>Creating Together</h3><p>Growing creative ideas through JMC, media projects and artist collaborations.</p></article>
+<article class="journey-step"><h3>Connecting Talent</h3><p>Bringing people together through events, open stages and talent recognition.</p></article>
+</div>
+<p class="journey-note">Our journey continues with a simple belief: creativity grows when people get the space to learn, create and perform.</p>
+</div></section>
+
 <section class="founder-section" id="founder"><div class="wrap"><div class="section-heading"><div class="eyebrow">The Vision Behind the Brand</div><h2>Leadership &amp; <span class="gold">Creative Vision</span></h2><p>Driven by a passion for music, learning and meaningful creative opportunities.</p></div>
 <div class="founder-card"><div class="founder-visual"><img class="founder-photo" src="file_00000000ecec81fab39bef91d5918d80.png" alt="Mohit Raj, Founder and Director of MR Creative India" loading="lazy"><div class="founder-photo-caption">FOUNDER • CREATIVE LEADER</div></div><div class="founder-details"><div class="eyebrow">Founder &amp; Director</div><div class="founder-name">MOHIT RAJ</div><div class="founder-role">MR CREATIVE INDIA</div><div class="founder-rule"></div><div class="founder-credentials"><div class="founder-credential"><small>Academic Qualification</small><strong>M.P.A. – Music (Vocal)</strong></div><div class="founder-credential"><small>University</small><strong>University of Allahabad</strong></div></div><div><span class="founder-net">✦ &nbsp; UGC NET QUALIFIED</span></div><p class="founder-copy">A music professional with a Master of Performing Arts (M.P.A.) in Vocal Music from the University of Allahabad and UGC NET qualification. Mohit Raj founded MR CREATIVE INDIA with a vision to build meaningful platforms for music education, artists, creators and live experiences.</p><p class="founder-quote">“Creating platforms where talent can learn, grow and shine.”</p><div class="founder-focus">MUSIC &nbsp;•&nbsp; EDUCATION &nbsp;•&nbsp; MEDIA &nbsp;•&nbsp; EVENTS</div></div></div>
 </div></section>
