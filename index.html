@@ -266,12 +266,37 @@ footer{background:#080808}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
 }
 
+ 
+/* Student achievement folder — integrated into the original homepage */
+.student-profile{display:none;max-width:1000px;margin:34px auto 8px;padding:clamp(18px,3vw,30px);border:1px solid rgba(214,173,85,.42);border-radius:12px;background:radial-gradient(circle at 10% 0%,rgba(214,173,85,.12),transparent 38%),linear-gradient(145deg,#19150e,#101010);box-shadow:0 18px 48px rgba(0,0,0,.3);scroll-margin-top:100px}
+.student-profile:target{display:block;animation:studentReveal .35s ease both}
+@keyframes studentReveal{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.student-profile-head{text-align:center;margin-bottom:24px}.student-profile-head h3{font-size:clamp(25px,4vw,36px);color:var(--gold2);margin:8px 0 2px}.student-profile-head p{color:var(--muted);margin:0 0 12px}
+.student-close{display:inline-block;color:var(--gold2);font-size:10px;letter-spacing:1.5px;border:1px solid rgba(214,173,85,.4);padding:7px 12px;border-radius:3px}
+.student-profile-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:20px;align-items:start}
+.student-profile-photo,.student-certificate-panel{padding:16px;border:1px solid rgba(214,173,85,.28);border-radius:8px;background:rgba(0,0,0,.2);min-width:0}
+.student-panel-label{color:var(--gold2);font-size:9px;letter-spacing:2.5px;margin-bottom:12px}
+.student-profile-photo img{display:block;width:100%;max-height:500px;object-fit:contain;background:#080808;border-radius:5px}
+.student-certificate{min-height:390px;padding:clamp(16px,3vw,28px);display:flex;flex-direction:column;justify-content:center;text-align:center;background:#f5efdf;color:#342a19;border:6px double #b18a43;outline:1px solid rgba(214,173,85,.2)}
+.student-cert-brand{font-family:Georgia,serif;color:#61471d;font-size:clamp(19px,3vw,28px);font-weight:bold;line-height:1.2}
+.student-cert-small{font-size:9px;letter-spacing:3px;color:#86662c;margin-top:5px}
+.student-cert-line{width:76%;height:1px;background:#b18a43;margin:15px auto}
+.student-cert-title{font-family:Georgia,serif;color:#76551d;font-size:clamp(22px,3.4vw,31px);margin:0 0 8px}
+.student-certificate p{font-size:12px;color:#5b4e37;margin:6px 0}
+.student-cert-name{font-family:Georgia,serif;font-size:clamp(22px,3.4vw,30px);font-weight:bold;color:#342a19;border-bottom:1px solid #b18a43;padding:7px 5px 9px;margin:6px auto;max-width:420px;width:100%}
+.student-cert-course{font-size:17px;font-weight:800;color:#674b1b;margin:5px 0}
+.student-cert-meta{display:flex;justify-content:space-between;gap:12px;text-align:left;margin-top:26px;font-size:9px;letter-spacing:.5px;color:#716044}
+.student-cert-meta span:last-child{text-align:right}.student-cert-meta strong{font-size:11px;color:#4c3818}
+.student-cert-tagline{font-size:8px;letter-spacing:2px;color:#8a6b35;margin-top:17px}
+@media(max-width:700px){.student-profile-grid{grid-template-columns:1fr}.student-profile{padding:16px}.student-profile-photo,.student-certificate-panel{padding:12px}.student-certificate{min-height:360px}}
+@media(prefers-reduced-motion:reduce){.student-profile:target{animation:none}}
+
 </style>
 </head>
 <body>
 <header class="site-header"><div class="wrap nav">
 <a class="brand" href="#home">MR CREATIVE INDIA<small>MUSIC • MEDIA • EVENTS</small></a>
-<nav class="nav-links" aria-label="Main navigation"><a href="#about">About</a><a href="#divisions">Our Work</a><a href="#portfolio">Portfolio</a><a href="students.html">Students</a><a href="#journey">Journey</a><a href="#academy">JMA</a><a href="#events">Events</a><a href="#founder">Founder</a><a href="#contact">Contact</a></nav>
+<nav class="nav-links" aria-label="Main navigation"><a href="#about">About</a><a href="#divisions">Our Work</a><a href="#portfolio">Portfolio</a><a href="#journey">Journey</a><a href="#academy">JMA</a><a href="#events">Events</a><a href="#founder">Founder</a><a href="#contact">Contact</a></nav>
 </div></header>
 <main>
 <section class="hero" id="home"><div class="wrap hero-content hero-inner">
@@ -315,8 +340,15 @@ footer{background:#080808}
 <article class="portfolio-tile"><div class="portfolio-icon">◈</div><h3>Music & Media</h3><p>JMC — Jaunpur Music Company, focused on music-led creative projects, media and artist collaborations.</p></article>
 <article class="portfolio-tile"><div class="portfolio-icon">✦</div><h3>Live Events & Open Stage</h3><p>Developing spaces for live performances, community participation and creative exchange.</p></article>
 <article class="portfolio-tile"><div class="portfolio-icon">🏆</div><h3>Talent Recognition</h3><p>Creator and talent initiatives designed to recognise dedication, originality and emerging creative voices.</p></article>
-<a class="portfolio-tile" href="students.html" style="padding:14px;justify-content:flex-end"><img src="file_00000000ecec81fab39bef91d5918d80.png" alt="Open JMA student achievement folder" loading="lazy" style="width:100%;height:230px;object-fit:contain;background:#090909;border:1px solid rgba(214,173,85,.35);border-radius:5px;margin-bottom:14px"><h3>Student Achievements</h3><p>Open student folders to view photographs and certificates from Jaunpur Music Academy.</p><span class="tag" style="align-self:flex-start;margin-top:12px">VIEW STUDENT FOLDERS →</span></a>
+<a class="portfolio-tile student-folder-tile" href="#ranveer-student" style="padding:14px;justify-content:flex-end"><img src="file_00000000ecec81fab39bef91d5918d80.png" alt="Open JMA student achievement folder" loading="lazy" style="width:100%;height:230px;object-fit:contain;background:#090909;border:1px solid rgba(214,173,85,.35);border-radius:5px;margin-bottom:14px"><h3>Student Achievements</h3><p>Open student folders to view photographs and certificates from Jaunpur Music Academy.</p><span class="tag" style="align-self:flex-start;margin-top:12px">OPEN STUDENT FOLDER →</span></a>
 </div>
+<div class="student-profile" id="ranveer-student">
+<div class="student-profile-head"><div class="eyebrow">JMA Student Folder</div><h3>Ranveer Srivastava</h3><p>Piano • 6 Month Training</p><a class="student-close" href="#portfolio">CLOSE FOLDER ×</a></div>
+<div class="student-profile-grid">
+<div class="student-profile-photo"><div class="student-panel-label">STUDENT PHOTOGRAPH</div><img src="file_00000000ecec81fab39bef91d5918d80.png" alt="JMA student Ranveer Srivastava presenting his achievement"></div>
+<div class="student-certificate-panel"><div class="student-panel-label">CERTIFICATE DETAILS</div><div class="student-certificate">
+<div class="student-cert-brand">JAUNPUR MUSIC ACADEMY</div><div class="student-cert-small">MR CREATIVE INDIA</div><div class="student-cert-line"></div><div class="student-cert-title">Certificate of Achievement</div><p>This certificate is presented to</p><div class="student-cert-name">Ranveer Srivastava</div><p>for completing</p><div class="student-cert-course">6 Month Piano Training</div><p>with dedication and commitment to musical learning.</p><div class="student-cert-meta"><span>ISSUE DATE<br><strong>15 October 2026</strong></span><span>CERTIFICATE ID<br><strong>JMA-001</strong></span></div><div class="student-cert-tagline">LEARN • PRACTICE • PERFORM</div></div></div>
+</div></div>
 <div style="text-align:center;margin-top:30px"><a class="button outline" href="https://www.instagram.com/mrcreative_india/" target="_blank" rel="noopener noreferrer">VIEW OUR INSTAGRAM ↗</a></div>
 </div></section>
 
